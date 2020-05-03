@@ -1,0 +1,24 @@
+#h3{
+    font-size:1.2em;
+    letter-spacing: 15px;
+    padding-left: 15px;
+    text-align: center;
+    transform-origin: center; 
+}
+#hk{
+    font-size:1.oem;
+    letter-spacing: 8px;
+    padding-left: 15px;
+    text-align: center;
+    transform-origin: center; 
+}
+#hm input {
+    background: transparent;
+    padding: 20px 60px;
+    margin-top: 80px;
+    border: 2px solid #2ab4b4;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #262626;
+    
+}

@@ -1,0 +1,57 @@
+<br/><br/><br/> 
+<br/><br/>
+
+
+<div class="container">
+
+<div class="row justify-content-center">
+<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+
+<header id="hk">
+	<h4 class="card-title mt-2 text-center ">Login</h4><br>
+</header>
+
+<form [formGroup]="loginForm" (ngSubmit)="verifyLogin()">
+            <div class="form-group" [ngClass]="{'has-error' : loginForm.get('name').errors && (loginForm.get('name').touched || loginForm.get('name').dirty)}">
+                <label for="name">Username</label> 
+                <input type="text" class="form-control" formControlName="name"
+                placeholder="Username" />
+                <span *ngIf="loginForm.get('name').errors && (loginForm.get('name').touched || loginForm.get('name').dirty)">
+                <span *ngIf="loginForm.get('name').errors.required" class="text-danger">
+                            Username required...
+                </span>
+            </span>
+                <!-- Predefined Structural Directive -->
+                <!-- *ngIf, *ngFor, *ngSwitchCase -->
+               
+            </div> <!-- end of username -->
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" formControlName="password"
+                placeholder="Password" />
+                <span *ngIf="loginForm.get('password').errors && (loginForm.get('password').touched || loginForm.get('password').dirty)">
+                    <span *ngIf="loginForm.get('password').errors.required" class="text-danger">
+                                Password required...
+                    </span>
+                </span>
+            </div> <!-- end of password -->
+
+
+            <button type="submit" class="btn btn-primary " style="margin-left: 100px;" >Login</button>
+          
+            <!-- <button class="btn btn-danger btn-block" type="reset">Cancel</button>   -->
+            
+            <div *ngIf="invalidLogin">
+                <div class="text-danger">
+                    Invalid Email or Password ..!
+                </div>
+            </div>
+        </form>        
+ <!-- card-body end .// -->
+<div class="border-top card-body text-center">New User <a [routerLink]="['/signup']">Register</a></div>
+ <!-- card.// -->
+</div> <!-- col.//-->
+</div> <!-- row.//-->
+</div> 
+

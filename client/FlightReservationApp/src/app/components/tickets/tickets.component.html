@@ -1,0 +1,113 @@
+<app-navbar></app-navbar>
+<div class="row ">
+    <div class="col-12 " id="hk" style="text-align: center;  background-color: lightcyan;">
+        <h1>Reservations</h1>
+    </div>
+</div>
+<br><br>
+<div class="col-12 offset-2 scroll ">
+    
+    <div class="row " *ngFor="let ticket of tickets">
+        <div class="card bg-light col-20 " style="margin-bottom: 50px; background-color: cadetblue;">
+            <div class="row">
+                <div class="col-12  text-dark  " style="text-align: center; background-color: lightseagreen;">
+                    <h5><strong>Reservation Details</strong></h5>
+                </div>
+                <hr />
+            </div>
+
+            <div class="row">
+                <div class="col-35 text-dark" style="background-color: lightcyan;">
+                    <div class="row">
+                        <div class="col-4">
+                            Name of passenger:{{ticket.user.name}}
+                        </div>
+                        <div class="col-4">
+                            Date :{{ticket.flightData.flightDate}}
+                        </div>
+                        <div class="col-4">
+                            TIME:{{ticket.flightData.departureTime}}
+                        </div>
+                        <div class="col-4">
+                            From:{{ticket.flightData.source}}
+                        </div>
+                       
+                        <div class="col-4">
+                            Bookig Id :{{ticket.bookingId}}
+                        </div>
+                        <div class="col-4 text-align:center">
+                            To:{{ticket.flightData.destination}}
+                        </div>
+                        <div class="col-4">
+                            Flight id:{{ticket.flightData.flightId}}
+                        </div>
+                        <div class="col-3">
+                        </div>
+                    </div>
+                    
+                    <div class="col-2 offset-5"  style="text-align: center">
+                        <button class="btn btn-danger" (click)="cancel(ticket.bookingId)">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="card bg-secondary col-5 text-light" style="margin-bottom: 50px;">
+            <div class="row">
+                <div class="col-12 bg-dark text-light" style="text-align: center">
+                    <h5><strong>BOARDING TICKET</strong></h5>
+                </div>
+                <hr />
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 text-light">
+                    <div class="row">
+                        <div class="col-7">
+                            <div class="row">
+                                <div class="col-12">
+                                    NAME : {{ticket.user.name}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    FROM :{{ticket.flightData.source}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    TO : {{ticket.flightData.destination}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-primary" (click)="cancel(ticket.bookingId)">Cancel</button>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-7">
+                            DATE : {{ticket.flightData.flightDate}}
+                        </div>
+                        <div class="col-5">
+                            TIME : {{ticket.flightData.departureTime}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7">
+                            GATE : A
+                        </div>
+                        <div class="col-5">
+                            Bookig Id : {{ticket.bookingId}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+
+            </div>
+        </div> -->
+    </div>
+</div>

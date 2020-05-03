@@ -1,0 +1,77 @@
+<br /><br />
+<br /><br />
+
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-lg-4 col-md-4 col-sm-5 col-xs-5 ">
+			
+				<header id="hk">
+					<h4 class="card-title mt-2 text-center ">Register</h4>
+				</header>
+				<article class="card-body">
+					<form [formGroup]="signUpForm" (ngSubmit)="verifyLogin()">
+						<div class="form-row form-group" [ngClass]="{'has-error' : signUpForm.get('name').errors && (signUpForm.get('name').touched || signUpForm.get('name').dirty)}">
+							<label>Firstname </label>
+							<input type="text" class="form-control" formControlName="name" placeholder="">
+							<span *ngIf="signUpForm.get('name').errors && (signUpForm.get('name').touched || signUpForm.get('name').dirty)">
+								<span *ngIf="signUpForm.get('name').errors.required" class="text-danger">
+											Name is required...
+								</span>
+							</span>
+						</div> <!-- form-group end.// -->
+						<div class="form-row form-group" [ngClass]="{'has-error' : signUpForm.get('username').errors && (signUpForm.get('username').touched || signUpForm.get('username').dirty)}">
+							<label>Username </label>
+							<input type="text" class="form-control" formControlName="username" placeholder="">
+
+							<span *ngIf="signUpForm.get('username').errors && (signUpForm.get('username').touched || signUpForm.get('username').dirty)">
+								<span *ngIf="signUpForm.get('username').errors.required" class="text-danger">
+											Username is required...
+								</span>
+							</span>
+						</div> <!-- form-group end.// -->
+						<div class="form-row form-group" [ngClass]="{'has-error' : signUpForm.get('phoneNum').errors && (signUpForm.get('phoneNum').touched || signUpForm.get('phoneNum').dirty)}">
+							<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 form-group">
+								<label>Phonenumber</label>
+								<input type="number" class="form-control" formControlName="phoneNum" placeholder="">
+								<span *ngIf="signUpForm.get('phoneNum').errors && (signUpForm.get('phoneNum').touched || signUpForm.get('phoneNum').dirty)">
+									<span *ngIf="signUpForm.get('phoneNum').errors.required" class="text-danger">
+											Phonenumber is required...
+									</span>
+								</span>
+								<small class="form-text text-muted"></small>
+							</div>
+							<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 offset-lg-1 form-group" [ngClass]="{'has-error' : signUpForm.get('age').errors && (signUpForm.get('age').touched || signUpForm.get('age').dirty)}">
+								<label>Age</label>
+								<input type="number" class="form-control" formControlName="age" placeholder=" ">
+								<span *ngIf="signUpForm.get('age').errors && (signUpForm.get('age').touched || signUpForm.get('age').dirty)">
+									<span *ngIf="signUpForm.get('age').errors.required" class="text-danger">
+											Age is required...
+									</span>
+								</span>
+							</div> <!-- form-group end.// -->
+						</div> <!-- form-group end.// -->
+						<div class="form-group" [ngClass]="{'has-error' : signUpForm.get('password').errors && (signUpForm.get('password').touched || signUpForm.get('password').dirty)}">
+							<label>Create password</label>
+							<input class="form-control" formControlName="password" type="password">
+							<span *ngIf="signUpForm.get('password').errors && (signUpForm.get('password').touched || signUpForm.get('password').dirty)">
+								<span *ngIf="signUpForm.get('password').errors.required" class="text-danger">
+										Password is required...
+								</span>
+								<span *ngIf="signUpForm.get('password').errors.minlength" class="text-danger">
+									 must be greater than 4 characters ..
+								</span>
+							</span>
+						</div> <!-- form-group end -->
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary " style="margin-left: 120px;"> Register </button>
+						</div> <!-- form-group-->
+						<small class="text-muted"></small>
+					</form>
+				</article> <!-- card-body end -->
+				<div class="border-top card-body text-center">Already have an account? <a [routerLink]="['/login']">Log In</a>
+				</div>
+			 <!-- card -->
+		</div> <!-- col-->
+	</div> <!-- row-->
+</div>
+<!--container end-->

@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="row ">
+    <div id="hk" class="col-12  " style="text-align: center; background-color: lightcyan;">
+        <h1>Book Flight</h1>
+    </div>
+</div>
+
+<br><br><br><br>
+<div class="row">
+    <div class="col">
+        <!-- <ng-container"> -->
+            <div class="row">
+               
+                <div class="card col-6 offset-3 " style="background-color:turquoise;">
+                    <br>
+                    <div class="col-12 ">
+                        <div class="row" id="hk" style="text-align: center;">
+                            <div class="col-12">
+                                <h1>Confirm Seat Reservation<br><br>{{flight.source}} ---> {{flight.destination}}</h1>
+                            </div><br /><br /><br />
+                            <div class="col-12">
+                                <h3><strong>Seats Available: {{flight.availableSeats}}</strong></h3>
+                                <h3><strong>Total Cost: {{flight.totalFare}}</strong></h3>
+                                <h3><strong>Date of Departure: {{flight.flightDate}}</strong></h3>
+                                <h3><strong>Time : {{flight.departureTime}}</strong></h3>
+                            </div><br /><br /><br />
+                            <div class="col-12">
+                                <br>
+                                <button class="btn btn-primary" (click)="paynow()" style="margin-bottom: 10px;">Pay</button>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="container-fluid" style="padding-left: 70px; padding-right: 70px;">
+    <div >
+        <br>
+        <h2  style="text-align: center;" id="hk" ><strong>Search Flights</strong></h2>
+        <br>
+
+        <div class="card bg-light col-8 offset-2">
+            <br><br>
+            <form [formGroup]="searchForm" (ngSubmit)="searchFlights()">
+                <div class="form-row form-group">
+                    <div class="form-group col-4 offset-1">
+                        <label for="source" style="text-align: center;"><strong>From</strong></label>
+                        <input type="text" class="form-control" formControlName="source" placeholder="Enter source" />
+                        
+                    </div> <!-- end of Source -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong><strong>-----></strong></strong>
+                    <div class="form-group col-4 offset-1">
+                        <label for="destination"><strong>To</strong> </label>
+                        <input type="text" class="form-control" formControlName="destination"
+                            placeholder="Enter destination" />
+                    </div> <!-- end of Destination -->
+
+                </div>
+                
+                <div class="form-group col-4 offset-5" style="align-items: center;">
+                    
+                    <button class="btn btn-success" type="submit">Search</button>
+                </div>
+               
+            </form>
+
+        </div>
+        <br><br>
+    </div>
+</div>
+<br>
+<div class="container-fluid  col-12 " style=" background-color: lightblue; background-size:contain;">
+    <h1  style="text-align: center;" *ngIf="submitted"><br><strong>Flights Available</strong><br></h1>
+    <ng-container>
+        <div class="card" style="margin-bottom: 50px;  background-color:lightcyan" *ngFor="let flight of flights">
+            
+            <div class="row">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-2" style="text-align: center;">
+                            <div class="row">
+                                <div class="col" style="text-align: center;">
+                                        <h5>Flightid</h5>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col" style="text-align: center;">
+                                        <h5>{{flight.flightId}}</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-3" style="text-align: center;">
+                                        <h5>{{flight.source}} </h5>
+                                </div>
+                                <div class="col-2" style="text-align: center;">
+                                    <strong>---></strong>
+                                </div>
+                                <div class="col-6" style="text-align: center;">
+                                        <h5>{{flight.destination}}</h5>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-4">
+                                    <strong><h5>Time:{{flight.departureTime}}</h5></strong>
+                                </div>
+                                <div class="col-4">
+                                    <strong><h5>Date:{{flight.flightDate}}</h5></strong>
+                                </div>
+                                <div class="col-4">
+                                    <strong><h5>Cost:{{flight.totalFare}}</h5></strong>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2" style="text-align: center;">
+                            <div class="row justify-content-center">
+                                        <h5>Seats Available</h5>
+                            </div>
+                            <hr />
+                            <div class="row justify-content-center">
+                                
+                                        <h5>{{flight.availableSeats}}</h5>    
+                                
+                            </div>
+                        </div>
+                        <div class="col-2" style="text-align: center;">
+                            <div class="row justify-content-center">
+                                
+                                    <strong><h5>Fare:{{flight.totalFare}}</h5></strong> 
+                                
+                            </div>
+                            <hr />
+                            <div class="row justify-content-center">
+                                <strong>
+                                    <button class="btn btn-success text-light" (click)="bookFlight(flight)">Book
+                                        Flight</button>
+                                </strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </ng-container>
+</div>
